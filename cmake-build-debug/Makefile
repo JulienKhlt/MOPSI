@@ -143,6 +143,33 @@ MOPSI/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/build
 .PHONY : MOPSI/fast
 
+Data.o: Data.cpp.o
+
+.PHONY : Data.o
+
+# target to build an object file
+Data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/Data.cpp.o
+.PHONY : Data.cpp.o
+
+Data.i: Data.cpp.i
+
+.PHONY : Data.i
+
+# target to preprocess a source file
+Data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/Data.cpp.i
+.PHONY : Data.cpp.i
+
+Data.s: Data.cpp.s
+
+.PHONY : Data.s
+
+# target to generate assembly for a file
+Data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/Data.cpp.s
+.PHONY : Data.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MOPSI"
+	@echo "... Data.o"
+	@echo "... Data.i"
+	@echo "... Data.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

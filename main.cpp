@@ -1,6 +1,6 @@
-#include <iostream>
+#include "Data.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    Data data("Base_Donnees/Data0.csv");
+    data.print();
 }

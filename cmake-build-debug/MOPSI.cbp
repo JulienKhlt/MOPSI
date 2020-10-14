@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/julien/CLionProjects/MOPSI/Data.cpp">
+			<Option target="MOPSI"/>
+		</Unit>
+		<Unit filename="/home/julien/CLionProjects/MOPSI/Data.h">
+			<Option target="MOPSI"/>
+		</Unit>
 		<Unit filename="/home/julien/CLionProjects/MOPSI/main.cpp">
 			<Option target="MOPSI"/>
 		</Unit>

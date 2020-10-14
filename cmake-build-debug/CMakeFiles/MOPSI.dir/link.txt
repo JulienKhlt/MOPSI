@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/MOPSI.dir/main.cpp.o  -o MOPSI 
+/usr/bin/c++  -g   CMakeFiles/MOPSI.dir/main.cpp.o CMakeFiles/MOPSI.dir/Data.cpp.o  -o MOPSI 

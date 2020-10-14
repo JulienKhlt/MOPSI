@@ -3,4 +3,4 @@ project(MOPSI)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(MOPSI main.cpp)
+add_executable(MOPSI main.cpp Data.cpp Data.h)
