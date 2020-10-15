@@ -88,7 +88,19 @@
 		<Unit filename="/home/julien/CLionProjects/MOPSI/Data.h">
 			<Option target="MOPSI"/>
 		</Unit>
+		<Unit filename="/home/julien/CLionProjects/MOPSI/Global_Data.cpp">
+			<Option target="MOPSI"/>
+		</Unit>
+		<Unit filename="/home/julien/CLionProjects/MOPSI/Global_Data.h">
+			<Option target="MOPSI"/>
+		</Unit>
 		<Unit filename="/home/julien/CLionProjects/MOPSI/main.cpp">
+			<Option target="MOPSI"/>
+		</Unit>
+		<Unit filename="/home/julien/CLionProjects/MOPSI/tools.cpp">
+			<Option target="MOPSI"/>
+		</Unit>
+		<Unit filename="/home/julien/CLionProjects/MOPSI/tools.h">
 			<Option target="MOPSI"/>
 		</Unit>
 		<Unit filename="/home/julien/CLionProjects/MOPSI/CMakeLists.txt">

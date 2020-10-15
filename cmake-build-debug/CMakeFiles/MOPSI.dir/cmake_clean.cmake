@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MOPSI.dir/Data.cpp.o"
+  "CMakeFiles/MOPSI.dir/Global_Data.cpp.o"
   "CMakeFiles/MOPSI.dir/main.cpp.o"
+  "CMakeFiles/MOPSI.dir/tools.cpp.o"
   "MOPSI"
   "MOPSI.pdb"
 )

@@ -11,4 +11,5 @@ def create_file(number_file, number_point, number_repetition, name_file = "Data"
 
 
 if __name__ == '__main__':
-    create_file(5, 10000, 50)
+    g_test_data = "Testing_Data"
+    create_file(5, 10000, 50, g_test_data)

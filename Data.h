@@ -8,6 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "tools.h"
 using namespace std;
 
 class Data {
@@ -15,10 +16,20 @@ public:
     vector<double> data;
     int b;
     int m;
+    vector<int> rho;
 
     void print();
     double operator() (int i) const;
-    Data(string file_name, int b);
+    Data(const string& file_name, int b);
+
+    int first_nozero(double x) const;
+    void compute_min();
+
+    int interval(double x) const;
+
+    double hyper_log_log();
+
+    int true_n();
 };
 
 

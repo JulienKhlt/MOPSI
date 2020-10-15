@@ -3,7 +3,18 @@
 
 CMakeFiles/MOPSI.dir/Data.cpp.o: ../Data.cpp
 CMakeFiles/MOPSI.dir/Data.cpp.o: ../Data.h
+CMakeFiles/MOPSI.dir/Data.cpp.o: ../tools.h
+
+CMakeFiles/MOPSI.dir/Global_Data.cpp.o: ../Data.h
+CMakeFiles/MOPSI.dir/Global_Data.cpp.o: ../Global_Data.cpp
+CMakeFiles/MOPSI.dir/Global_Data.cpp.o: ../Global_Data.h
+CMakeFiles/MOPSI.dir/Global_Data.cpp.o: ../tools.h
 
 CMakeFiles/MOPSI.dir/main.cpp.o: ../Data.h
+CMakeFiles/MOPSI.dir/main.cpp.o: ../Global_Data.h
 CMakeFiles/MOPSI.dir/main.cpp.o: ../main.cpp
+CMakeFiles/MOPSI.dir/main.cpp.o: ../tools.h
+
+CMakeFiles/MOPSI.dir/tools.cpp.o: ../tools.cpp
+CMakeFiles/MOPSI.dir/tools.cpp.o: ../tools.h
 
