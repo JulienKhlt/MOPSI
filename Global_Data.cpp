@@ -12,7 +12,7 @@ Global_Data::Global_Data(int n_training, int n_testing, const string& file_train
         string end = to_string(i) + ".csv";
         training_data.emplace_back(file_training + end, b);
     }
-    for (int i = 0; i < n_training; i++) {
+    for (int i = 0; i < n_testing; i++) {
         string end = to_string(i) + ".csv";
         testing_data.emplace_back(file_testing + end, b);
     }
@@ -30,8 +30,8 @@ double Global_Data::hyper_log_log() {
     double A = average(alpha);
     vector<double> n_vector;
     for (Data data : testing_data) {
-        cout << data.hyper_log_log() << endl;
-        cout << data.true_n() << endl;
+        /*cout << data.hyper_log_log() << endl;
+        cout << data.true_n() << endl;*/
         n_vector.push_back(A*data.hyper_log_log()-data.true_n());
     }
     for (double i : n_vector) {

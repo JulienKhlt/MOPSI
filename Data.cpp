@@ -85,7 +85,7 @@ double Data::hyper_log_log() {
     compute_min();
     double Z = 0;
     for (int j = 0; j < m; j++) {
-        Z += puissance(2, -rho[j]);
+        Z += puissance(1./2, rho[j]);
     }
     Z = 1./Z;
     return puissance(m, 2)*Z;

@@ -11,6 +11,7 @@ int puissance(int a, int b);
 double puissance(double a, int b);
 bool in(const vector<double>& v, double x);
 double average(const vector<double>& v);
+double average(const vector<int>& v);
 double var(const vector<double>& v);
 
 #endif //MOPSI_TOOLS_H

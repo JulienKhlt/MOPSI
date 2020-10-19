@@ -2,6 +2,8 @@
 // Created by julien on 15/10/2020.
 //
 #include "tools.h"
+#include <iostream>
+using namespace std;
 
 
 int puissance(int a, int b) {
@@ -39,6 +41,14 @@ double average(const vector<double>& v) {
         S += x/v.size();
     }
     return S;
+}
+
+double average(const vector<int>& v) {
+    double S = 0;
+    for (int x : v) {
+        S += x;
+    }
+    return S/v.size();
 }
 
 double var(const vector<double>& v) {
