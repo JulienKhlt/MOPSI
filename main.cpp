@@ -11,7 +11,7 @@ int main() {
     cout << data.hyper_log_log() << endl;
     cout << data.true_n() << endl;*/
 
-    Global_Data globalData(99, 5, "Base_Donnees/Data", "Base_Donnees/Testing_Data", 7);
+    Global_Data globalData(4, 5, "Base_Donnees/Data", "Base_Donnees/Testing_Data", 7);
     //globalData.print(0);
     cout << globalData.hyper_log_log() << endl;
 
