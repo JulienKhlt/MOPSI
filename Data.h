@@ -30,7 +30,11 @@ public:
     double hyper_log_log();
 
     int true_n();
+
+    bool test_Xi2();
 };
+
+int classe(double x,int k);
 
 
 #endif //MOPSI_DATA_H

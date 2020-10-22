@@ -100,3 +100,30 @@ int Data::true_n() {
     }
     return v.size();
 }
+
+int classe(double x,int k){
+    int i=0;
+    while(x>(i+1)*1/double(k)){
+        i++;
+    }
+    return i;
+}
+
+bool Data::test_Xi2() {
+    double Xi=59.70;
+    int k = 31;
+    int observations[k];
+    for( int i=0;i<k;i++)
+        observations[i]=0;
+    for (int i = 0; i < data.size(); i++) {
+        observations[classe(data[i], k)]=observations[classe(data[i], k)]+1;
+    }
+    double Q = 0;
+    int n = data.size();
+    for (int i = 0; i < k; i++) {
+        Q = Q + (observations[i] - n * 1 / double(k)) * (observations[i] - n * 1 / double(k)) / (n * 1 / double(k));
+    }
+    if (Q<=Xi){cout<<"bon avec proba 0.999"<<endl;}
+    else{cout<<"mauvais avec proba d'erreur 0.001"<<endl;}
+    return(Q<=Xi);
+}
