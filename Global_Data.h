@@ -9,11 +9,9 @@
 class Global_Data {
 public:
     int n_training;
-    int n_testing;
     int b;
     vector<Data> training_data;
-    vector<Data> testing_data;
-    Global_Data(int n_training, int n_testing, const string& file_training,  const string& file_testing, int b);
+    Global_Data(int n_training, const string& file_training, int b);
     void print(int i);
     double hyper_log_log();
 };

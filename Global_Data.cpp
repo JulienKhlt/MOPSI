@@ -4,17 +4,12 @@
 
 #include "Global_Data.h"
 
-Global_Data::Global_Data(int n_training, int n_testing, const string& file_training,  const string& file_testing, int b) {
+Global_Data::Global_Data(int n_training, const string& file_training, int b) {
     this->n_training = n_training;
-    this->n_testing = n_testing;
     this->b = b;
     for (int i = 0; i < n_training; i++) {
         string end = to_string(i) + ".csv";
         training_data.emplace_back(file_training + end, b);
-    }
-    for (int i = 0; i < n_testing; i++) {
-        string end = to_string(i) + ".csv";
-        testing_data.emplace_back(file_testing + end, b);
     }
 }
 
@@ -23,19 +18,18 @@ void Global_Data::print(int i) {
 }
 
 double Global_Data::hyper_log_log() {
+    int n = training_data[0].true_n();
     vector<double> alpha;
     for (Data data : training_data) {
-        alpha.push_back(data.true_n()/data.hyper_log_log());
+        cout << data.hyper_log_log() << endl;
+        alpha.push_back(data.hyper_log_log()/n);
     }
-    double A = average(alpha);
-    vector<double> n_vector;
-    for (Data data : testing_data) {
-        /*cout << data.hyper_log_log() << endl;
-        cout << data.true_n() << endl;*/
-        n_vector.push_back(A*data.hyper_log_log()-data.true_n());
+    double A = 1/average(alpha);
+    cerr << A << endl;
+    double V = 0;
+    for (Data data : training_data) {
+        cout << data.hyper_log_log()*A << endl;
+        V += puissance(data.hyper_log_log()*A - n, 2)/(training_data.size()-1);
     }
-    for (double i : n_vector) {
-        cout << i << endl;
-    }
-    return average(n_vector);
+    return sqrt(V)/n;
 }

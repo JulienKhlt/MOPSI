@@ -52,10 +52,10 @@ void Data::compute_min() {
     for (double i : data) {
         I = interval(i);
         if (rho[I] == 0) {
-            rho[I] = first_nozero(i);
+            rho[I] = first_nozero(i)-b;
         }
-        else if (rho[I] < first_nozero(i)) {
-            rho[I] = first_nozero(i);
+        else if (rho[I] < first_nozero(i)-b) {
+            rho[I] = first_nozero(i)-b;
         }
     }
 }
@@ -86,7 +86,9 @@ double Data::hyper_log_log() {
     double Z = 0;
     for (int j = 0; j < m; j++) {
         Z += puissance(1./2, rho[j]);
+        //cout << "rho " << j << " " <<rho[j] << endl;
     }
+    //cout << "Z " << Z << endl;
     Z = 1./Z;
     return puissance(m, 2)*Z;
 }
@@ -101,9 +103,9 @@ int Data::true_n() {
     return v.size();
 }
 
-int classe(double x,int k){
-    int i=0;
-    while(x>(i+1)*1/double(k)){
+int classe(double x, int k){
+    int i = 0;
+    while(x > (i+1)*1/double(k)){
         i++;
     }
     return i;
@@ -113,8 +115,8 @@ bool Data::test_Xi2() {
     double Xi=59.70;
     int k = 31;
     int observations[k];
-    for( int i=0;i<k;i++)
-        observations[i]=0;
+    for( int i = 0; i < k; i++)
+        observations[i] = 0;
     for (int i = 0; i < data.size(); i++) {
         observations[classe(data[i], k)]=observations[classe(data[i], k)]+1;
     }

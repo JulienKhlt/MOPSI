@@ -3,7 +3,7 @@
 #include <cstddef>
 #include "Global_Data.h"
 
-int main1() {
+int main() {
     /*Data data("Base_Donnees/Data0.csv", 7);
     data.print();
     data.compute_min();
@@ -11,14 +11,14 @@ int main1() {
     cout << data.hyper_log_log() << endl;
     cout << data.true_n() << endl;*/
 
-    Global_Data globalData(4, 5, "Base_Donnees/Data", "Base_Donnees/Testing_Data", 7);
+    Global_Data globalData(10, "Base_Donnees/Data", 7);
     //globalData.print(0);
     cout << globalData.hyper_log_log() << endl;
 
 }
 
-int main(){
-    Data test("Base_Donnees/Testing_Data16.csv",7);
+/*int main(){
+    Data test("Base_Donnees/Data16.csv",7);
     test.test_Xi2();
 
-}
+}*/

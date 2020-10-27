@@ -5,6 +5,7 @@
 #ifndef MOPSI_TOOLS_H
 #define MOPSI_TOOLS_H
 #include <vector>
+#include <math.h>
 using namespace std;
 
 int puissance(int a, int b);
