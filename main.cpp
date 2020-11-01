@@ -11,9 +11,16 @@ int main() {
     cout << data.hyper_log_log() << endl;
     cout << data.true_n() << endl;*/
 
-    Global_Data globalData(10, "Base_Donnees/Data", 7);
+    Global_Data globalData(100, "Base_Donnees/Data", 7);
     //globalData.print(0);
-    cout << globalData.hyper_log_log() << endl;
+    cout << globalData.hyper_log_log(-1) << endl;
+    cout << globalData.hyper_log_log(-0.5) << endl;
+    cout << globalData.hyper_log_log(-0.25) << endl;
+    cout << globalData.hyper_log_log(-0.75) << endl;
+    /*for (int i = 1; i < 10; i++) {
+        cout << i << " " << globalData.hyper_log_log(i) << endl;
+        cout << -i << " " << globalData.hyper_log_log(-i) << endl;
+    }*/
 
 }
 

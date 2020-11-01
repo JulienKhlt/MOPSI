@@ -27,7 +27,7 @@ public:
 
     int interval(double x) const;
 
-    double hyper_log_log();
+    double hyper_log_log(double a);
 
     int true_n();
 

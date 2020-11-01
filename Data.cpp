@@ -20,6 +20,14 @@ vector<double> separator(string text, const string& delimiter=";") {
     return vector_double;
 }
 
+double average(vector<int> rho, double m) {
+    double Z = 0;
+    for (auto i:rho) {
+        Z += pow(pow(2, i), m);
+    }
+    return pow(Z, 1/m);
+}
+
 Data::Data(const string& file_name, int b) {
     this->b = b;
     this->m = puissance(2, b);
@@ -81,15 +89,9 @@ int Data::first_nozero(double x) const {
     return I;
 }
 
-double Data::hyper_log_log() {
+double Data::hyper_log_log(double a) {
     compute_min();
-    double Z = 0;
-    for (int j = 0; j < m; j++) {
-        Z += puissance(1./2, rho[j]);
-        //cout << "rho " << j << " " <<rho[j] << endl;
-    }
-    //cout << "Z " << Z << endl;
-    Z = 1./Z;
+    double Z = average(rho, a);
     return puissance(m, 2)*Z;
 }
 

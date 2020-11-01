@@ -17,19 +17,19 @@ void Global_Data::print(int i) {
     training_data[i].print();
 }
 
-double Global_Data::hyper_log_log() {
+double Global_Data::hyper_log_log(double a) {
     int n = training_data[0].true_n();
     vector<double> alpha;
     for (Data data : training_data) {
-        cout << data.hyper_log_log() << endl;
-        alpha.push_back(data.hyper_log_log()/n);
+        //cout << data.hyper_log_log(a) << endl;
+        alpha.push_back(data.hyper_log_log(a)/n);
     }
     double A = 1/average(alpha);
-    cerr << A << endl;
+    //cerr << A << endl;
     double V = 0;
     for (Data data : training_data) {
-        cout << data.hyper_log_log()*A << endl;
-        V += puissance(data.hyper_log_log()*A - n, 2)/(training_data.size()-1);
+        //cout << data.hyper_log_log(a)*A << endl;
+        V += puissance(data.hyper_log_log(a)*A - n, 2)/(training_data.size()-1);
     }
     return sqrt(V)/n;
 }

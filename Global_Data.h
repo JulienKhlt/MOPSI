@@ -13,7 +13,7 @@ public:
     vector<Data> training_data;
     Global_Data(int n_training, const string& file_training, int b);
     void print(int i);
-    double hyper_log_log();
+    double hyper_log_log(double a);
 };
 
 
