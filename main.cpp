@@ -3,7 +3,7 @@
 #include <cstddef>
 #include "Global_Data.h"
 
-int main() {
+int main1() {
     /*Data data("Base_Donnees/Data0.csv", 7);
     data.print();
     data.compute_min();
@@ -11,21 +11,20 @@ int main() {
     cout << data.hyper_log_log() << endl;
     cout << data.true_n() << endl;*/
 
-    Global_Data globalData(100, "Base_Donnees/Data", 7);
-    //globalData.print(0);
-    cout << globalData.hyper_log_log(-1) << endl;
-    cout << globalData.hyper_log_log(-0.5) << endl;
-    cout << globalData.hyper_log_log(-0.25) << endl;
-    cout << globalData.hyper_log_log(-0.75) << endl;
-    /*for (int i = 1; i < 10; i++) {
-        cout << i << " " << globalData.hyper_log_log(i) << endl;
-        cout << -i << " " << globalData.hyper_log_log(-i) << endl;
-    }*/
-
 }
 
-/*int main(){
-    Data test("Base_Donnees/Data16.csv",7);
-    test.test_Xi2();
+int main(){
+    double a=-1;
 
-}*/
+    Global_Data global_alpha(0,n_alpha,"Base_Donnees/Testing_data",7);
+    Global_Data global_biais(n_alpha,100,"Base_Donnees/Testing_data",7);
+    double Alpha=global_alpha.alpha_moyen_h(a);
+
+    cout<<"alpha "<<Alpha<<endl;
+    cout<<"biais "<<global_biais.biais(Alpha,a)<<endl;
+
+    double inf,sup;
+    intervalle_variance(Alpha,-1,inf,sup,10,10);
+    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
+
+}
