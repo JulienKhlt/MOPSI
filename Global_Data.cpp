@@ -23,8 +23,7 @@ double Global_Data::alpha_moyen_h(double a){
     for (Data data : training_data) {
         alpha.push_back(data.hyper_log_log(a)/n);
     }
-    double A = 1/average(alpha);
-    return A;
+    return 1/average(alpha);
 }
 
 double Global_Data::alpha_moyen_a(double a){
@@ -42,7 +41,7 @@ double Global_Data::hyper_log_log_error(double Alpha, double a){
     int n = training_data[0].true_n();
     double V = 0;
     for (Data data : training_data) {
-        //cout << data.hyper_log_log(a)*A << endl;
+        //cout << data.hyper_log_log(a)*Alpha << endl;
         V += puissance(data.hyper_log_log(a)*Alpha - n, 2)/(training_data.size()-1);
     }
     return sqrt(V)/n;

@@ -24,12 +24,13 @@ double average(vector<int> rho, double m) {
     double Z = 1;
     if (m == 0) {
         for (auto i:rho) {
-            Z *= pow(pow(2, i), 1/rho.size());
+            Z *= pow(pow(2, i), 1./rho.size());
         }
         return Z;
     }
     else {
         for (auto i:rho) {
+            cout << i << endl;
             Z += pow(pow(2, i), m);
         }
     }
