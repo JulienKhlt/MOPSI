@@ -25,6 +25,7 @@ int main(){
     cout<< global_biais.hyper_log_log_error(Alpha, a) << endl;
     cout<< global_biais.hyper_log_log_error(Alpha, -0.75) << endl;
     cout<< global_biais.hyper_log_log_error(Alpha, 1) << endl;
+    cout<< global_biais.hyper_log_log_error(Alpha, 0) << endl;
     double inf,sup;
     /*intervalle_variance(Alpha,-1,inf,sup,10,100);
     cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
