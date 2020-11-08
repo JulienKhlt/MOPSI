@@ -11,7 +11,7 @@ public:
     int n_training;
     int b;
     vector<Data> training_data;
-    Global_Data(int i0,int n_training, const string& file_training, int b);
+    Global_Data(int i0, int n_training, const string& file_training, int b);
     void print(int i);
     double alpha_moyen_h(double a);
     double alpha_moyen_a(double a);
@@ -21,6 +21,6 @@ public:
 
 const int n_alpha=100; //nombre de fichiers pour determiner alpha
 
-void intervalle_variance(double Alpha,double a,double& inf, double& sup,int n_global_data, int n_data);
+void intervalle_variance(double Alpha, double a, double& inf, double& sup, int n_global_data, int n_data);
 
 #endif //MOPSI_GLOBAL_DATA_H

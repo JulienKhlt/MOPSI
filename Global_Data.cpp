@@ -4,7 +4,7 @@
 
 #include "Global_Data.h"
 
-Global_Data::Global_Data(int i0,int n_training, const string& file_training, int b) {
+Global_Data::Global_Data(int i0, int n_training, const string& file_training, int b) {
     this->n_training = n_training;
     this->b = b;
     for (int i = i0; i < n_training+i0; i++) {
@@ -38,19 +38,12 @@ double Global_Data::alpha_moyen_a(double a){
     return A;
 }
 
-double Global_Data::hyper_log_log_error(double Alpha,double a){
+double Global_Data::hyper_log_log_error(double Alpha, double a){
     int n = training_data[0].true_n();
-    vector<double> alpha;
-    for (Data data : training_data) {
-        //cout << data.hyper_log_log(a) << endl;
-        alpha.push_back(data.hyper_log_log(a)/n);
-    }
-    double A = Alpha;
-    //cerr << A << endl;
     double V = 0;
     for (Data data : training_data) {
         //cout << data.hyper_log_log(a)*A << endl;
-        V += puissance(data.hyper_log_log(a)*A - n, 2)/(training_data.size()-1);
+        V += puissance(data.hyper_log_log(a)*Alpha - n, 2)/(training_data.size()-1);
     }
     return sqrt(V)/n;
 }
@@ -63,18 +56,18 @@ double Global_Data::biais(double Alpha,double a){
         E.push_back(data.hyper_log_log(a)*Alpha);
         //cout<<data.hyper_log_log(a)*Alpha<<endl;
     }
-    double E_barre=average(E);
+    double E_barre = average(E);
     return (E_barre-n);
 }
 
 void intervalle_variance(double Alpha,double a,double& inf, double& sup,int n_global_data, int n_data){
     vector<double> V;
-    for (int i=0;i<n_global_data;i++){
-        Global_Data global_test=Global_Data(n_alpha+i*n_data,n_data,"Base_Donnees/Testing_data",7);
+    for (int i=0; i<n_global_data; i++){
+        Global_Data global_test = Global_Data(n_alpha+i*n_data, n_data,"Base_Donnees/Testing_Data",7);
         //cout<<n_alpha+i*n_data<<endl;
-        V.push_back(global_test.hyper_log_log_error(Alpha,a));
+        V.push_back(global_test.hyper_log_log_error(Alpha, a));
     }
-    std::sort(V.begin(),V.end());
+    sort(V.begin(), V.end());
     inf=V[int(0.025*n_global_data)];
     sup=V[int(0.975*n_global_data)];
 };
