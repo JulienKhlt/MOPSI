@@ -21,8 +21,9 @@ vector<double> separator(string text, const string& delimiter=";") {
 }
 
 double average(vector<int> rho, double m) {
-    double Z = 1;
+    double Z = 0;
     if (m == 0) {
+        Z = 1;
         for (auto i:rho) {
             Z *= pow(pow(2, i), 1./rho.size());
         }
@@ -30,7 +31,6 @@ double average(vector<int> rho, double m) {
     }
     else {
         for (auto i:rho) {
-            cout << i << endl;
             Z += pow(pow(2, i), m);
         }
     }
