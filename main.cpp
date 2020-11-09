@@ -36,4 +36,22 @@ int main(){
     Alpha = global_alpha.alpha_moyen_h(-0.70);
     intervalle_variance(Alpha,-0.70,inf,sup,10,100);
     cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
+    Alpha = global_alpha.alpha_moyen_h(-0.60);
+    intervalle_variance(Alpha,-0.60,inf,sup,10,100);
+    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
+    Alpha = global_alpha.alpha_moyen_h(-0.50);
+    intervalle_variance(Alpha,-0.50,inf,sup,10,100);
+    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
+    Alpha = global_alpha.alpha_moyen_h(-0.40);
+    intervalle_variance(Alpha,-0.40,inf,sup,10,100);
+    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
+    Alpha = global_alpha.alpha_moyen_h(-0.30);
+    intervalle_variance(Alpha,-0.30,inf,sup,10,100);
+    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
+    Alpha = global_alpha.alpha_moyen_h(-0.20);
+    intervalle_variance(Alpha,-0.20,inf,sup,10,100);
+    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
+    Alpha = global_alpha.alpha_moyen_h(-0.10);
+    intervalle_variance(Alpha,-0.10,inf,sup,10,100);
+    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
 }
