@@ -18,14 +18,8 @@ int main(){
     double inf,sup;
     intervalle_variance(Alpha,-1,inf,sup,10,100);
     cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.95);
-    intervalle_variance(Alpha,-0.95,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
     Alpha = global_alpha.alpha_moyen_h(-0.90);
     intervalle_variance(Alpha,-0.90,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.85);
-    intervalle_variance(Alpha,-0.85,inf,sup,10,100);
     cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
     Alpha = global_alpha.alpha_moyen_h(-0.80);
     intervalle_variance(Alpha,-0.80,inf,sup,10,100);

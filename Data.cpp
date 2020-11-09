@@ -34,7 +34,7 @@ double average(vector<int> rho, double m) {
             Z += pow(pow(2, i), m);
         }
     }
-    return pow(Z, 1/m);
+    return pow(Z/rho.size(), 1/m);
 }
 
 Data::Data(const string& file_name, int b) {
@@ -101,7 +101,7 @@ int Data::first_nozero(double x) const {
 double Data::hyper_log_log(double a) {
     compute_min();
     double Z = average(rho, a);
-    return puissance(m, 2)*Z;
+    return m*Z;
 }
 
 int Data::true_n() {
