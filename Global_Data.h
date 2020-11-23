@@ -17,6 +17,7 @@ public:
     double alpha_moyen_a(double a);
     double hyper_log_log_error(double Alpha,double a);
     double biais(double Alpha,double a);
+    void test_variance_theorique(double& inf, double& sup,double a,double Alpha);
 };
 
 const int n_alpha=100; //nombre de fichiers pour determiner alpha
