@@ -31,6 +31,7 @@ double average(vector<int> rho, double m) {
     }
     else {
         for (auto i:rho) {
+            //cout << i << endl;
             Z += pow(pow(2, i), m);
         }
     }
@@ -102,6 +103,16 @@ double Data::hyper_log_log(double a) {
     compute_min();
     double Z = average(rho, a);
     return m*Z;
+}
+
+double Data::hyper_log_log_f(){
+    compute_min();
+    double S=0;
+    for (auto i:rho){
+        S+=f(pow(2,i));
+    }
+    return f_i(S);
+
 }
 
 int Data::true_n() {

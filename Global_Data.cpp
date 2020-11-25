@@ -1,8 +1,10 @@
 //
-// Created by julien on 15/10/2020.
+// Created by julien and clémence on 15/10/2020.
 //
 
 #include "Global_Data.h"
+
+//definition d'un fichier
 
 Global_Data::Global_Data(int i0, int n_training, const string& file_training, int b) {
     this->n_training = n_training;
@@ -16,6 +18,8 @@ Global_Data::Global_Data(int i0, int n_training, const string& file_training, in
 void Global_Data::print(int i) {
     training_data[i].print();
 }
+
+//moyenne avec f=x**a
 
 double Global_Data::alpha_moyen_h(double a){
     int n = training_data[0].true_n();
@@ -59,7 +63,7 @@ double Global_Data::biais(double Alpha,double a){
     return (E_barre-n);
 }
 
-void Global_Data::test_variance_theorique(double& inf, double& sup,double a,double Alpha){
+void Global_Data::test_variance_theorique(double& inf, double& sup,double a,double Alpha){ //ne fonctionne pas
     double cov=0;
     double E_barre=0;
     double E2_barre=0;
@@ -105,3 +109,44 @@ void intervalle_variance(double Alpha,double a,double& inf, double& sup,int n_gl
     inf=V[int(0.025*n_global_data)];
     sup=V[int(0.975*n_global_data)];
 };
+
+//moyenne avec f inversible quelconque et son inverse
+
+double Global_Data::alpha_moyen_h_f(){int n = training_data[0].true_n();
+    vector<double> alpha;
+    for (Data data : training_data) {
+        alpha.push_back(data.hyper_log_log_f()/n);
+    }
+    return 1/average(alpha);}
+
+double Global_Data::hyper_log_log_error_f(double Alpha){
+    int n = training_data[0].true_n();
+    double V = 0;
+    for (Data data : training_data) {
+        //cout << data.hyper_log_log(a)*Alpha << endl;
+        V += puissance(data.hyper_log_log_f()*Alpha - n, 2)/(training_data.size()-1);
+    }
+    return sqrt(V)/n;}
+
+double Global_Data::biais_f(double Alpha){
+    vector<double> E;
+    int n = training_data[0].true_n();
+    for( Data data: training_data){
+        E.push_back(data.hyper_log_log_f()*Alpha);
+        // cout<<data.hyper_log_log(a)<<endl;
+    }
+    double E_barre = average(E);
+    return (E_barre-n);
+}
+
+void intervalle_variance_f(double Alpha,double& inf, double& sup,int n_global_data, int n_data){
+    vector<double> V;
+    for (int i=0; i<n_global_data; i++){
+        Global_Data global_test = Global_Data(n_alpha+i*n_data, n_data,"Base_Donnees/Testing_Data",7);
+        //cout<<n_alpha+i*n_data<<endl;
+        V.push_back(global_test.hyper_log_log_error_f(Alpha));
+    }
+    sort(V.begin(), V.end());
+    inf=V[int(0.025*n_global_data)];
+    sup=V[int(0.975*n_global_data)];
+}
