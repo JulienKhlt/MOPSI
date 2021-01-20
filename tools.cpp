@@ -60,3 +60,9 @@ double var(const vector<double>& v) {
     return V;
 }
 
+void histogram(const string& file_name, vector<double> E) {
+    ofstream file(file_name.c_str());
+    for (auto e : E) {
+        file << e << ";";
+    }
+}

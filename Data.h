@@ -17,11 +17,12 @@ public:
     vector<double> data;
     int b;
     int m;
+    double x;
     vector<int> rho;
 
     void print();
     double operator() (int i) const;
-    Data(const string& file_name, int b);
+    Data(const string& file_name, int b, double x);
 
     int first_nozero(double x) const;
     void compute_min();

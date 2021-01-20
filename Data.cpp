@@ -20,25 +20,26 @@ vector<double> separator(string text, const string& delimiter=";") {
     return vector_double;
 }
 
-double average(vector<int> rho, double m) {
+double average(vector<int> rho, double m, double x) {
     double Z = 0;
     if (m == 0) {
         Z = 1;
         for (auto i:rho) {
-            Z *= pow(pow(2, i), 1./rho.size());
+            Z *= pow(pow(x, i), 1./rho.size());
         }
         return Z;
     }
     else {
         for (auto i:rho) {
-            Z += pow(pow(2, i), m);
+            Z += pow(pow(x, i), m);
         }
     }
     return pow(Z/rho.size(), 1/m);
 }
 
-Data::Data(const string& file_name, int b) {
+Data::Data(const string& file_name, int b, double x) {
     this->b = b;
+    this->x = x;
     this->m = puissance(2, b);
     ifstream file(file_name.c_str());
     if ( !file )
@@ -92,7 +93,7 @@ int Data::first_nozero(double x) const {
         }
     }
     int I = b+1;
-    while (x < puissance(0.5, I)) {
+    while (x < puissance(1/this->x, I)) {
         I++;
     }
     return I;
@@ -100,7 +101,7 @@ int Data::first_nozero(double x) const {
 
 double Data::hyper_log_log(double a) {
     compute_min();
-    double Z = average(rho, a);
+    double Z = average(rho, a, x);
     return m*Z;
 }
 

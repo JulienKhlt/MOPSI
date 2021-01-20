@@ -12,4 +12,4 @@ def create_file(number_file, number_point, number_repetition, name_file = "Data"
 
 if __name__ == '__main__':
     g_test_data = "Testing_Data"
-    create_file(5000, 10000, 0)
+    create_file(20000, 10000, 0)

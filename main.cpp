@@ -3,49 +3,26 @@
 #include <cstddef>
 #include "Global_Data.h"
 
-
-
 int main(){
     double a = -1;
 
-    Global_Data global_alpha(0, n_alpha,"Base_Donnees/Testing_Data",7);
-    Global_Data global_biais(n_alpha,100,"Base_Donnees/Testing_Data",7);
-    double Alpha = global_alpha.alpha_moyen_h(a);
 
-    cout<<"alpha "<<Alpha<<endl;
-    cout<<"biais "<<global_biais.biais(Alpha,a)<<endl;
+    double z = 1.2;
+    Global_Data globalData(200, 100, "Base_Donnees/Testing_Data", "Base_Donnees/Data", 7, 2);
+    globalData.estimateur_better(a, -0.75, 50, 100);
+    //    globalData.intervalle_variance_emp(a, 200, 100);
+//    cout << globalData.variance_asymptotique(a) << endl;
+//    Global_Data globalData2(200, 100, "Base_Donnees/Testing_Data", "Base_Donnees/Data", 7, 2);
+//    globalData2.intervalle_variance_emp(a, 200, 100);
 
-    double inf,sup;
-    intervalle_variance(Alpha,-1,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.90);
-    intervalle_variance(Alpha,-0.90,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.80);
-    intervalle_variance(Alpha,-0.80,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.75);
-    intervalle_variance(Alpha,-0.75,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.70);
-    intervalle_variance(Alpha,-0.70,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.60);
-    intervalle_variance(Alpha,-0.60,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.50);
-    intervalle_variance(Alpha,-0.50,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.40);
-    intervalle_variance(Alpha,-0.40,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.30);
-    intervalle_variance(Alpha,-0.30,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.20);
-    intervalle_variance(Alpha,-0.20,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
-    Alpha = global_alpha.alpha_moyen_h(-0.10);
-    intervalle_variance(Alpha,-0.10,inf,sup,10,100);
-    cout<<"intervalle de confiance :["<<inf<<";"<<sup<<"]"<<endl;
+//    Global_Data globalData3(200, 100, "Base_Donnees/Testing_Data", "Base_Donnees/Data", 7, 2);
+
+    //    globalData2.intervalle_variance_emp(-0.75, 200, 100);
+
+//    globalData.histogram_data(a, "test.txt");
+
+//    Global_Data globalData2(100, 100, "Base_Donnees/Testing_Data", "Base_Donnees/Data",7, z);
+//    globalData2.intervalle_variance_emp(a, 10, 100);
+
+
 }
